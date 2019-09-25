@@ -8,6 +8,9 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>Welcome <span style="color: red; font-size: 50px; text-transform: uppercase;">{{ $user }}</span> from Views!</h1>
+    <h1>Welcome
+        <span style="color: red; font-size: 50px; text-transform: uppercase;">{{ $user }}</span>
+        from Views!
+    </h1>
 </body>
 </html>
