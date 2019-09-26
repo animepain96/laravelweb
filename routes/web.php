@@ -89,3 +89,6 @@ Route::get('/', function () {
 //    return view('hello-user')->with('user', $user);
 //});
 
+//Get & Post
+Route::get('/demo-login', 'LoginController@getLogin');
+Route::post('/demo-login', 'LoginController@postLogin');
