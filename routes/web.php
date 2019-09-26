@@ -90,5 +90,7 @@ Route::get('/', function () {
 //});
 
 //Get & Post
-Route::get('/demo-login', 'LoginController@getLogin');
-Route::post('/demo-login', 'LoginController@postLogin');
+//Route::get('/demo-login', 'LoginController@getLogin');
+//Route::post('/demo-login', 'LoginController@postLogin');
+
+Route::get('/home-demo', 'MyController@getHome');

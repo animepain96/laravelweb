@@ -20,4 +20,9 @@ class MyController extends Controller
     {
         return $num1 + $num2;
     }
+
+    function getHome()
+    {
+        return view('home-demo');
+    }
 }

@@ -15,6 +15,11 @@ class LoginController extends Controller
     {
         $username = $request->username;
         $password = $request->password;
-        return $username . ' - ' . $password;
+        if($username == 'laravel' && $password == '123')
+        {
+            $isValid = true;
+            return view('demo-login', ['isValid' => true]);
+        }
+        return view('demo-login', ['username' => $username, 'password' => $password]);
     }
 }

@@ -8,6 +8,23 @@
     <title>Demo Login</title>
 </head>
 <body>
+@if(!empty($isValid) && $isValid)
+    @php
+        $sum = 0
+    @endphp
+    @for($i = 0; $i < 5; $i++)
+        @php
+            $sum += $i
+        @endphp
+    @endfor
+
+    @for($i = 0; $i < 5; $i++)
+        Tong tu 1->5 la: {{ $sum }} <br>
+    @endfor
+@elseif (!empty($username) && !empty($password))
+    Username: {{ $username }} <br>
+    Password: {{ $password }}
+@else
     <form method="post">
         @csrf
         <table>
@@ -24,9 +41,12 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><button name="login" type="submit">Login</button></td>
+                <td colspan="2">
+                    <button name="login" type="submit">Login</button>
+                </td>
             </tr>
         </table>
     </form>
+@endif
 </body>
 </html>
