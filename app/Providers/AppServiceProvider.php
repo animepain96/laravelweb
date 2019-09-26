@@ -24,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        //Share view structure
+        //View::share('key', 'value');
     }
 }

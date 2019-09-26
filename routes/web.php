@@ -69,4 +69,23 @@ Route::get('/', function () {
 //    return view('hello-user', ['user' => $user]);
 //});
 //Controller
-Route::get('hello/{user}', 'MyController@getHelloUser');
+//Route::get('hello/{user}', 'MyController@getHelloUser');
+
+//Truyen du lieu cho view dung compact
+//Route::get('/xinchao/{user}', function($user){
+//    return view('hello-user', compact('user'));
+//});
+
+//Truyen nhieu du lieu
+//Route::get('/xinchao', function(){
+//    $user = 'Tung 3D';
+//    $age = 50;
+//    return view('hello-user', compact('user', 'age'));
+//});
+
+//Truyen du lieu dung with
+//view('name')->with('key', 'value');
+//Route::get('/xinchao/{user}', function ($user) {
+//    return view('hello-user')->with('user', $user);
+//});
+
