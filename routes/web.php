@@ -93,8 +93,18 @@ Route::get('/', function () {
 //Route::get('/demo-login', 'LoginController@getLogin');
 //Route::post('/demo-login', 'LoginController@postLogin');
 
-Route::get('/home-demo', 'MyController@getHome');
+//Layout
+//Route::get('/home-demo', 'MyController@getHome');
+//
+//Route::get('/index-page', function(){
+//    return view('index');
+//});
 
-Route::get('/index-page', function(){
-    return view('index');
+//Database create
+Route::get('/database/create-user', function(){
+    Schema::create('users', function($table){
+        $table->increments('id');
+    });
 });
+//Goi tu Controller
+Route::get('/database/create-person', 'DBSupportController@createPerson');
