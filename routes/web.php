@@ -94,3 +94,7 @@ Route::get('/', function () {
 //Route::post('/demo-login', 'LoginController@postLogin');
 
 Route::get('/home-demo', 'MyController@getHome');
+
+Route::get('/index-page', function(){
+    return view('index');
+});

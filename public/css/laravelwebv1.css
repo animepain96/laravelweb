@@ -1,0 +1,23 @@
+body{
+    font-size: 1.2rem;
+}
+
+.title{
+    color: #1d2124;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-content{
+    text-indent: 1.5rem;
+    text-align: justify;
+}
+
+.copyright-text{
+    font-size: 15px;
+    color: #4e555b;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 3rem;
+}
