@@ -108,3 +108,8 @@ Route::get('/database/create-user', function(){
 });
 //Goi tu Controller
 Route::get('/database/create-person', 'DBSupportController@createPerson');
+//Them cot email
+Route::get('/database/add-email-column', 'DBSupportController@addEmailColumn');
+//Rename column
+Route::get('/database/rename-column', 'DBSupportController@renameColumn');
+Route::get('/database/create-post', 'DBSupportController@createPosts');
