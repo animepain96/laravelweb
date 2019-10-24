@@ -100,16 +100,47 @@ Route::get('/', function () {
 //    return view('index');
 //});
 
-//Database create
-Route::get('/database/create-user', function(){
-    Schema::create('users', function($table){
-        $table->increments('id');
-    });
+////Database create
+//Route::get('/database/create-user', function(){
+//    Schema::create('users', function($table){
+//        $table->increments('id');
+//    });
+//});
+////Goi tu Controller
+//Route::get('/database/create-person', 'DBSupportController@createPerson');
+////Them cot email
+//Route::get('/database/add-email-column', 'DBSupportController@addEmailColumn');
+////Rename column
+//Route::get('/database/rename-column', 'DBSupportController@renameColumn');
+//Route::get('/database/create-post', 'DBSupportController@createPosts');
+
+//Lay du lieu
+//Lay tat ca: DB::table('name')->get();
+//Dieu kien:
+//DB::table('name')->where('column','filter')->get() filter: filter to filt
+//DB::table('name')->where('column', '>','filter')->get() get data: >, <, = filter
+//DB::table('name')->where('column', 'like', 'filter')->get() tim chuoi co chua filter
+//DB::table('name')->where('column', '>', 'filter')->orwhere('column', 'filter')->get() Long dieu kien vao nhau
+//where(Not)Between('name', [x,y]) : (khong) nam giua x va y
+//where(Not)In('name', array): (khong) thuoc mang
+//where(Not)Null('name'): kiem tra la null
+//where(Month, Day, Year)Date('name', 'date'): lay truong co ngay
+//whereColumn('name1', 'name2'): kiem tra hai gia tri trong cot 1 va cot 2 co bang nhau hay khong
+//whereColumn('name1','citera','name2'): dieu kien giua name1 va name2
+//whereColumn([['first', '=' , 'lastname'], ['name1', '>', 'name2']]): mang cac dieu kien
+//whereExists(function ($query)
+//{
+//      $query->select(DB::raw(1))->from('orders')->whereRaw('orders.user_id=user_id')
+//});
+//Noi
+//join('contacts', 'user_id' , '=' , 'contacts.user_id') // noi hai bang
+//leftjoin
+Route::get('/posts', function(){
+    $data = DB::table('posts')->whereDate('created_date', date())->get();
+    print_r($data);
 });
-//Goi tu Controller
-Route::get('/database/create-person', 'DBSupportController@createPerson');
-//Them cot email
-Route::get('/database/add-email-column', 'DBSupportController@addEmailColumn');
-//Rename column
-Route::get('/database/rename-column', 'DBSupportController@renameColumn');
-Route::get('/database/create-post', 'DBSupportController@createPosts');
+
+Route::get('/post-category', function(){
+    $data = DB::table('posts')->join('categories', 'posts.cat_id', '=', 'categories.id')->get();
+    print_r($data);
+});
