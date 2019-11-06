@@ -135,12 +135,32 @@ Route::get('/', function () {
 //Noi
 //join('contacts', 'user_id' , '=' , 'contacts.user_id') // noi hai bang
 //leftjoin
-Route::get('/posts', function(){
-    $data = DB::table('posts')->whereDate('created_date', date())->get();
-    print_r($data);
-});
+//insert(array): ['email' => 'john@gmail.com', 'votes' => '1'] có thể truyền mảng nhiều giá trị
+//where('id', 1)->update(array): update bang ghi: ['votes' => '2']
+//delete(): xoa bang
+//where('id', 1)->delete(): xoa bang ghi có id 1
 
-Route::get('/post-category', function(){
-    $data = DB::table('posts')->join('categories', 'posts.cat_id', '=', 'categories.id')->get();
-    print_r($data);
-});
+// Route::get('/posts', function(){
+//     $data = DB::table('posts')->whereDate('created_date', date())->get();
+//     print_r($data);
+// });
+
+// Route::get('/post-category', function(){
+//     $data = DB::table('posts')->join('categories', 'posts.cat_id', '=', 'categories.id')->get();
+//     print_r($data);
+// });
+
+// Route::get('/category', 'CategoryController@getCategory');
+// Route::get('/category/delete/{id}', 'CategoryController@deleteCategory');
+// Route::post('/category/add', 'CategoryController@insertCategory');
+// Route::get('/category/edit/{id}', 'CategoryController@getEditCategory');
+// Route::post('/category/edit', 'CategoryController@postEditCategory');
+
+// Route::get('/post', 'PostController@getPost');
+// Route::get('/post/delete/{id}', 'PostController@deletePost');
+// Route::post('/post/add', 'PostController@insertPost');
+// Route::get('/post/edit/{id}', 'PostController@getEditPost');
+// Route::post('/post/edit', 'PostController@postEditPost');
+
+Route::resource('category', 'CategoryController');
+Route::resource('post', 'PostController');
