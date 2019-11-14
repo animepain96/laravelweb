@@ -20,10 +20,10 @@
         <form method="post" action="{{ route('category.update', $cat->id) }}">
             @method('PATCH')
             @csrf
-            <table style="border:none; maxwidth: 500px;">
+            <table style="border:none; width: 500px;">
                     <tr>
                         <td>Tên danh mục:</td>
-                    <td><input style="margin: 0 0 0 10px; padding: 0 5px;" type="text" name="name" value="{{ $cat->name }}"></td>
+                    <td><input class="form-control" style="margin: 0 0 0 10px; padding: 0 5px;" type="text" name="name" value="{{ $cat->name }}"></td>
                     </tr>
                     <tr>
                         <td>Bật:</td>

@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <form method="POST" action="{{ route('category.store') }}">
             @csrf
-            <table style="border:none; maxwidth: 500px;">
+            <table style="border:none; width: 500px;">
                 <tr>
                     <td>Tên danh mục:</td>
                     <td><input class="form-control" style="margin: 0 0 0 10px;" type="text" name="name"/></td>

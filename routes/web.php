@@ -164,3 +164,5 @@ Route::get('/', function () {
 
 Route::resource('category', 'CategoryController');
 Route::resource('post', 'PostController');
+
+Route::post('searchCategory', 'SearchController@searchCategory')->name('searchCategory');

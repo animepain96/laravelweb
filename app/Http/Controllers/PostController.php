@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -106,7 +107,7 @@ class PostController extends Controller
         $post->summary = $request->get('summary');
         $post->content = $request->get('content');
         $post->cat_id = $request->get('cat_id');
-        $post->per_id = 1;
+        $post->per_id = DB::table('persons')->first()->id;
 
         $post->save();
 
